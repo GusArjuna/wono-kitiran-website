@@ -30,7 +30,7 @@
 	<link href="{{ url('css/styles.css') }}" rel="stylesheet">
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="{{ url('images/favicon.png') }}">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -46,10 +46,10 @@
     <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
     <!-- Text Logo - Use this if you don't have a graphic logo -->
-    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+    <a class="navbar-brand logo-text page-scroll" href="{{ url('/') }}">Wisata Jati Walondo</a>
 
     <!-- Image Logo -->
-    <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+    {{-- <a class="navbar-brand logo-image" href="{{ url('index.html') }}"><img src="{{ url('images/logo.svg') }}" alt="alternative"></a> --}}
     
     <!-- Mobile Menu Toggle Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,27 +69,27 @@
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#services">SERVICES</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+            </li>
 
             <!-- Dropdown Menu -->          
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
+                    <a class="dropdown-item" href="{{ url('terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
+                    <a class="dropdown-item" href="{{ url('privacy-policy') }}"><span class="item-text">PRIVACY POLICY</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">ENTERTAINMENT</span></a>
+                    <a class="dropdown-item" href="{{ url('entertain') }}"><span class="item-text">ENTERTAINMENT</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">FOOD</span></a>
+                    <a class="dropdown-item" href="{{ url('food') }}"><span class="item-text">FOOD</span></a>
                 </div>
             </li>
             <!-- end of dropdown menu -->
             
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link page-scroll" href="">ADMIN LOGIN</a>
+                <a class="nav-link page-scroll" href="{{ url('/adminlogin') }}">ADMIN LOGIN</a>
             </li>
         </ul>
         <span class="nav-item social-icons">
@@ -115,10 +115,16 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="text-container about">
-                        <h4>Few Words About Aria</h4>
-                        <p class="white">We're passionate about delivering the best business growth services for companies just starting out as startups or industry players that have established their market position a long tima ago.</p>
+                        <h4>Wisata Jati Walondo</h4>
+                        <p class="white">Kami menyediakan tempat healing yang wajib dikunjungi</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-6s">
+                    <div class="text-container">
+                        <h4>Maps</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15801.621911492744!2d112.3579687!3d-8.0600569!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x94fce6a7e0e47095!2sWisata%20Jati%20Walondo!5e0!3m2!1sen!2sid!4v1669420634450!5m2!1sen!2sid" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-md-2">
@@ -126,45 +132,10 @@
                         <h4>Links</h4>
                         <ul class="list-unstyled li-space-lg white">
                             <li>
-                                <a class="white" href="#your-link">startupguide.com</a>
+                                <a class="white" href="{{ url('terms-conditions') }}">Terms & Conditions</a>
                             </li>
                             <li>
-                                <a class="white" href="terms-conditions.html">Terms & Conditions</a>
-                            </li>
-                            <li>
-                                <a class="white" href="privacy-policy.html">Privacy Policy</a>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-md-2">
-                    <div class="text-container">
-                        <h4>Tools</h4>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>
-                                <a class="white" href="#your-link">businessgrowth.com</a>
-                            </li>
-                            <li>
-                               <a class="white" href="#your-link">influencers.com</a>
-                            </li>
-                            <li class="media">
-                                <a class="white" href="#your-link">optimizer.net</a>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-md-2">
-                    <div class="text-container">
-                        <h4>Partners</h4>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>
-                                <a class="white" href="#your-link">unicorns.com</a>
-                            </li>
-                            <li>
-                                <a class="white" href="#your-link">staffmanager.com</a>
-                            </li>
-                            <li>
-                                <a class="white" href="#your-link">association.gov</a>
+                                <a class="white" href="{{ url('privacy-policy') }}">Privacy Policy</a>
                             </li>
                         </ul>
                     </div> <!-- end of text-container -->
@@ -180,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+                    <p class="p-small">Copyright © 2020 <a href="{{ url('https://inovatik.com') }}">Template by Inovatik</a></p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

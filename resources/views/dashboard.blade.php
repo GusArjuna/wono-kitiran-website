@@ -957,15 +957,15 @@
             <div class="col-lg-6">
                 <div class="text-container">
                     <div class="section-title">CONTACT</div>
-                    <h2>Get In Touch Using The Form</h2>
-                    <p>You can stop by our office for a cup of coffee and just use the contact form below for any questions and inquiries</p>
+                    <h2>HUBUNGI KAMI</h2>
+                    <p>Untuk menghubungi kami seputar pertanyaan, ataupun ada kritik dan saran bisa langsung ke alamat berikut atau menghubungi nomor dan media sosial di bawah ini</p>
                     <ul class="list-unstyled li-space-lg">
-                        <li class="address"><i class="fas fa-map-marker-alt"></i>22nd Innovative Street, San Francisco, CA 94043, US</li>
-                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">+81 720 22 126</a></li>
-                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">+81 720 22 128</a></li>
-                        <li><i class="fas fa-envelope"></i><a href="mailto:office@aria.com">office@aria.com</a></li>
+                        <li class="address"><i class="fas fa-map-marker-alt"></i>Jalan Jend. S. parman V no 59B waru Sidoarjo</li>
+                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">ARJUNA +62 851 5686 5853</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">BASUDEWA +62 851 5686 5853</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:office@aria.com">wisatawalondo@gmail.com</a></li>
                     </ul>
-                    <h3>Follow Aria On Social Media</h3>
+                    <h3>Follow Wisata Jati Walondo On Social Media</h3>
 
                     <span class="fa-stack">
                         <a href="#your-link">
@@ -1020,12 +1020,17 @@
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
+                        <input type="text" class="form-control-input" id="cphone" name="cphone" required>
+                        <label class="label-control" for="cphone">Phone</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
                         <textarea class="form-control-textarea" id="cmessage" required></textarea>
                         <label class="label-control" for="cmessage">Your message</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group checkbox">
-                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I agree with Aria's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
+                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>Saya Setuju dengan <a href="{{ url('privacy-policy') }}">Kebijakan</a> dan <a href="{{ url('terms-conditions') }}">Syarat Ketentuan</a>  Wisata Jati Walondo
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
