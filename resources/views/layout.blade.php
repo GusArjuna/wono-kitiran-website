@@ -23,11 +23,11 @@
     <!-- Styles -->
     <link href="{{ url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext') }}" rel="stylesheet">
     <link href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext') }}" rel="stylesheet">
-    <link href="{{ url('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ url('css/fontawesome-all.css') }}" rel="stylesheet">
-    <link href="{{ url('css/swiper.css') }}" rel="stylesheet">
-	<link href="{{ url('css/magnific-popup.css') }}" rel="stylesheet">
-	<link href="{{ url('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url('aria/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url('aria/css/fontawesome-all.css') }}" rel="stylesheet">
+    <link href="{{ url('aria/css/swiper.css') }}" rel="stylesheet">
+	<link href="{{ url('aria/css/magnific-popup.css') }}" rel="stylesheet">
+	<link href="{{ url('aria/css/styles.css') }}" rel="stylesheet">
 	
 	<!-- Favicon  -->
     <link rel="icon" href="{{ url('images/favicon.png') }}">
@@ -75,7 +75,7 @@
 
             <!-- Dropdown Menu -->          
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
+                <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ url('terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
                     <div class="dropdown-items-divide-hr"></div>
@@ -160,15 +160,16 @@
     
     	
     <!-- Scripts -->
-    <script src="{{ url('js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="{{ url('js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="{{ url('js/bootstrap.min.js')}}"></script> <!-- Bootstrap framework -->
-    <script src="{{ url('js/jquery.easing.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{ url('js/swiper.min.js')}}"></script> <!-- Swiper for image and text sliders -->
-    <script src="{{ url('js/jquery.magnific-popup.js')}}"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="{{ url('js/morphext.min.js')}}"></script> <!-- Morphtext rotating text in the header -->
-    <script src="{{ url('js/isotope.pkgd.min.js')}}"></script> <!-- Isotope for filter -->
-    <script src="{{ url('js/validator.min.js')}}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{{ url('js/scripts.js')}}"></script> <!-- Custom scripts -->
+    <script src="{{ url('aria/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{{ url('aria/js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="{{ url('aria/js/bootstrap.min.js')}}"></script> <!-- Bootstrap framework -->
+    <script src="{{ url('aria/js/jquery.easing.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ url('aria/js/swiper.min.js')}}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{{ url('aria/js/jquery.magnific-popup.js')}}"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="{{ url('aria/js/morphext.min.js')}}"></script> <!-- Morphtext rotating text in the header -->
+    <script src="{{ url('aria/js/isotope.pkgd.min.js')}}"></script> <!-- Isotope for filter -->
+    <script src="{{ url('aria/js/validator.min.js')}}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="{{ url('aria/js/scripts.js')}}"></script> <!-- Custom scripts -->
 </body>
+
 </html>

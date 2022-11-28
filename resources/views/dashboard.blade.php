@@ -127,7 +127,7 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                        <button type="button" class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#ticketing">DETAILS</button>
                     </div> <!-- end of button-container -->
                 </div>
                 <!-- end of card -->
@@ -286,4 +286,22 @@
     </div> <!-- end of container -->
 </div> <!-- end of form-2 -->
 <!-- end of contact -->
+<!-- Modal -->
+<div class="modal fade" id="ticketing" tabindex="-1" aria-labelledby="ticketinglabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="ticketinglabel">Pesan Tiket</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div>
 @endsection
