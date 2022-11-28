@@ -46,7 +46,7 @@
     <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
     <!-- Text Logo - Use this if you don't have a graphic logo -->
-    <a class="navbar-brand logo-text page-scroll" href="{{ url('/') }}">Wisata Jati Walondo</a>
+    <a class="navbar-brand logo-text page-scroll" href="{{ url('/') }}">The Wono Kitiran</a>
 
     <!-- Image Logo -->
     {{-- <a class="navbar-brand logo-image" href="{{ url('index.html') }}"><img src="{{ url('images/logo.svg') }}" alt="alternative"></a> --}}
@@ -61,16 +61,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll" href="{{ url('/#header') }}">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#intro">INTRO</a>
+                <a class="nav-link page-scroll" href="{{ url('/#intro') }}">INTRO</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#services">SERVICES</a>
+                <a class="nav-link page-scroll" href="{{ url('/#services') }}">SERVICES</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                <a class="nav-link page-scroll" href="{{ url('/#contact') }}">CONTACT</a>
             </li>
 
             <!-- Dropdown Menu -->          
