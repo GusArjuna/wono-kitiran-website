@@ -63,7 +63,7 @@
             <!-- Nav Item  -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/admin/news') }}">
-                    <i class="fa fa-plus"></i>
+                    <i class="fa fa-newspaper-o"></i>
                     <span>News</span></a>
             </li>
 
