@@ -89,7 +89,7 @@
             <!-- end of dropdown menu -->
             
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{ url('/adminlogin') }}">ADMIN LOGIN</a>
+                <a class="nav-link page-scroll" href="{{ url('/admin/login') }}">ADMIN LOGIN</a>
             </li>
         </ul>
         <span class="nav-item social-icons">

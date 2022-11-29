@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/adminlogin', function () {
+Route::get('/admin/login', function () {
     return view('adminlogin');
 });
 
@@ -37,10 +37,30 @@ Route::get('/food', function () {
     return view('food');
 });
 
-Route::get('/admindashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('admindashboard');
 });
 
-Route::get('/blank', function () {
-    return view('blank');
+Route::get('/admin/users', function () {
+    return view('adminusers');
+});
+
+Route::get('/admin/ticket', function () {
+    return view('adminticket');
+});
+
+Route::get('admin/news', function () {
+    return view('adminnews');
+});
+
+Route::get('admin/message', function () {
+    return view('adminmessage');
+});
+
+Route::get('admin/food', function () {
+    return view('adminfood');
+});
+
+Route::get('admin/entertain', function () {
+    return view('adminentertain');
 });

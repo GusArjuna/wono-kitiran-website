@@ -12,7 +12,7 @@
     <title>Admin Wono Kitiran | Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url('vendor/fontawesome-free/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
     <link
         href="{{ url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i') }}"
         rel="stylesheet">
@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ ('/admin/dashboard') }}">
                 <div class="sidebar-brand-text mx-3">Admin Page</div>
             </a>
 
@@ -39,9 +39,9 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ ('/admin/dashboard') }}">
+                    <i class="fa fa-tachometer"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -50,42 +50,42 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Website
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Nav Item  -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="{{ url('/admin/ticket') }}">
+                    <i class="fa fa-ticket"></i>
+                    <span>Ticket</span></a>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Nav Item  -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="{{ url('/admin/news') }}">
+                    <i class="fa fa-plus"></i>
+                    <span>News</span></a>
+            </li>
+
+            <!-- Nav Item  -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/admin/message') }}">
+                    <i class="fa fa-bell-o"></i>
+                    <span>Message</span></a>
+            </li>
+
+            <!-- Nav Item  -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/admin/food') }}">
+                    <i class="fa fa-cutlery"></i>
+                    <span>Food</span></a>
+            </li>
+
+            <!-- Nav Item  -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/admin/entertain') }}">
+                    <i class="fa fa-th"></i>
+                    <span>Entertain</span></a>
             </li>
 
             <!-- Divider -->
@@ -93,42 +93,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Users
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/blank') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <a class="nav-link" href="{{ url('/admin/users') }}">
+                    <i class="fa fa-users"></i>
+                    <span>List Admin</span></a>
             </li>
 
             <!-- Divider -->
@@ -136,7 +108,9 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="btn btn-primary" type="button" id="sidebarToggle">
+                    <i class="fa fa-arrows-h"></i>
+                </button>
             </div>
 
         </ul>
@@ -164,7 +138,7 @@
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
+                                    <i class="fa fa-search"></i>
                                 </button>
                             </div>
                         </div>
@@ -189,7 +163,7 @@
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
+                                                <i class="fa fa-search"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -209,7 +183,7 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <i class="fa fa-sign-out mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
@@ -245,7 +219,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ url('adminlogin') }}">Logout</a>
+                    <a class="btn btn-primary" href="{{ url('/admin/login') }}">Logout</a>
                 </div>
             </div>
         </div>
