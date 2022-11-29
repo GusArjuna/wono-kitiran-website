@@ -36,3 +36,11 @@ Route::get('/entertain', function () {
 Route::get('/food', function () {
     return view('food');
 });
+
+Route::get('/admindashboard', function () {
+    return view('admindashboard');
+});
+
+Route::get('/blank', function () {
+    return view('blank');
+});
