@@ -32,13 +32,15 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <th>jungkat jungkit</th>
-                                <th>untuk anak anak</th>
-                                <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
-                            </tr>
+                            @foreach ($entertains as $entertain)
+                                <tr>
+                                    <th>{{ $entertain->id }}</th>
+                                    <th>{{ $entertain->nama }}</th>
+                                    <th>{{ $entertain->detail }}</th>
+                                    <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

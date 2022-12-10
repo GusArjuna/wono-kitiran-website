@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ticket;
+use App\Models\Harga;
 use App\Http\Requests\StoreticketRequest;
 use App\Http\Requests\UpdateticketRequest;
 
@@ -15,7 +16,10 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminticket',[
+            "tickets" => ticket::all(),
+            "harga" => Harga::find(1),
+        ]);
     }
 
     /**

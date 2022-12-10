@@ -34,14 +34,16 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <th>Lalapan</th>
-                                <th>Campuran Sayuran</th>
-                                <th>20000</th>
-                                <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
-                            </tr>
+                            @foreach ($foods as $food)
+                                <tr>
+                                    <th>{{ $food->id }}</th>
+                                    <th>{{ $food->nama }}</th>
+                                    <th>{{ $food->detail }}</th>
+                                    <th>{{ $food->harga }}</th>
+                                    <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

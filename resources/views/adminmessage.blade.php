@@ -36,15 +36,17 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <th>Taufan</th>
-                                <th>taufanmaruf@gmail.com</th>
-                                <th>0878282828282</th>
-                                <th>takkan</th>
-                                <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
-                            </tr>
+                            @foreach ($pesans as $pesan)
+                                <tr>
+                                    <th>{{ $pesan->id }}</th>
+                                    <th>{{ $pesan->nama }}</th>
+                                    <th>{{ $pesan->email }}</th>
+                                    <th>{{ $pesan->notelp }}</th>
+                                    <th>{{ $pesan->pesan }}</th>
+                                    <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

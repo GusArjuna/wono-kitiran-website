@@ -15,7 +15,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminmessage',[
+            "pesans" => message::all()
+        ]);
     }
 
     /**

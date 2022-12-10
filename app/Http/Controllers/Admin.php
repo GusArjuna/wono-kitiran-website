@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\entertainment;
-use App\Http\Requests\StoreentertainmentRequest;
-use App\Http\Requests\UpdateentertainmentRequest;
+use App\Models\User;
+use Illuminate\Http\Request;
 
-class EntertainmentController extends Controller
+class Admin extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class EntertainmentController extends Controller
      */
     public function index()
     {
-        return view('adminentertain',[
-            "entertains" => entertainment::all()
+        return view('adminusers',[
+            "users" => User::all()
         ]);
     }
 
@@ -33,10 +32,10 @@ class EntertainmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreentertainmentRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreentertainmentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -44,10 +43,10 @@ class EntertainmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\entertainment  $entertainment
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(entertainment $entertainment)
+    public function show(User $user)
     {
         //
     }
@@ -55,10 +54,10 @@ class EntertainmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\entertainment  $entertainment
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(entertainment $entertainment)
+    public function edit(User $user)
     {
         //
     }
@@ -66,11 +65,11 @@ class EntertainmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateentertainmentRequest  $request
-     * @param  \App\Models\entertainment  $entertainment
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateentertainmentRequest $request, entertainment $entertainment)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -78,10 +77,10 @@ class EntertainmentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\entertainment  $entertainment
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(entertainment $entertainment)
+    public function destroy(User $user)
     {
         //
     }

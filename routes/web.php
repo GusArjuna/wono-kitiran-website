@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin;
+use App\Http\Controllers\EntertainmentController;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,27 +55,8 @@ Route::get('/food', function () {
 Route::get('/admin/dashboard', function () {
     return view('admindashboard');
 });
-
-Route::get('/admin/users', function () {
-    return view('adminusers');
-});
-
-Route::get('/admin/ticket', function () {
-    return view('adminticket');
-});
-
-Route::get('admin/news', function () {
-    return view('adminnews');
-});
-
-Route::get('admin/message', function () {
-    return view('adminmessage');
-});
-
-Route::get('admin/food', function () {
-    return view('adminfood');
-});
-
-Route::get('admin/entertain', function () {
-    return view('adminentertain');
-});
+Route::get('/admin/users', [Admin::class, 'index']);
+Route::get('/admin/ticket', [TicketController::class, 'index']);
+Route::get('/admin/message', [MessageController::class, 'index']);
+Route::get('/admin/food', [FoodController::class, 'index']);
+Route::get('/admin/entertain', [EntertainmentController::class, 'index']);
