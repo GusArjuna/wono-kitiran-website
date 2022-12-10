@@ -52,7 +52,7 @@
                                             Me</label>
                                     </div>
                                 </div> --}}
-                                <a href="{{ ('/admindashboard') }}" class="btn btn-primary btn-user btn-block">
+                                <a href="{{ ('/admin/dashboard') }}" class="btn btn-primary btn-user btn-block">
                                     Login
                                 </a>
                             </form>

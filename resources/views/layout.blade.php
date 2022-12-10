@@ -18,7 +18,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Wisata Jati Walondo | Wono Kitiran Blitar</title>
+    <title>Wisata Jati Walondo | {{ $title }}</title>
     
     <!-- Styles -->
     <link href="{{ url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext') }}" rel="stylesheet">
@@ -61,16 +61,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{ url('/#header') }}">HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll" href="{{ ($title=='Wono Kitiran Blitar')? url('#header') : url('/#header') }}">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{ url('/#intro') }}">INTRO</a>
+                <a class="nav-link page-scroll" href="{{ ($title=='Wono Kitiran Blitar')? url('#intro') : url('/#intro') }}">INTRO</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{ url('/#services') }}">SERVICES</a>
+                <a class="nav-link page-scroll" href="{{ ($title=='Wono Kitiran Blitar')? url('#services') : url('/#services') }}">SERVICES</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="{{ url('/#contact') }}">CONTACT</a>
+                <a class="nav-link page-scroll" href="{{ ($title=='Wono Kitiran Blitar')? url('#contact') : url('/#contact') }}">CONTACT</a>
             </li>
 
             <!-- Dropdown Menu -->          

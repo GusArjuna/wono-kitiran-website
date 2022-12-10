@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('dashboard',[
+        "title" => "Wono Kitiran Blitar"
+    ]);
 });
 
 Route::get('/admin/login', function () {
@@ -22,19 +24,27 @@ Route::get('/admin/login', function () {
 });
 
 Route::get('/privacy-policy', function () {
-    return view('privacy-policy');
+    return view('privacy-policy',[
+        "title" => "Privacy Policy"
+    ]);
 });
 
 Route::get('/terms-conditions', function () {
-    return view('terms-conditions');
+    return view('terms-conditions',[
+        "title" => "Terms Conditions"
+    ]);
 });
 
 Route::get('/entertain', function () {
-    return view('entertain');
+    return view('entertain',[
+        "title" => "Entertainment"
+    ]);
 });
 
 Route::get('/food', function () {
-    return view('food');
+    return view('food',[
+        "title" => "Food"
+    ]);
 });
 
 Route::get('/admin/dashboard', function () {
