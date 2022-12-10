@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('entertainments', function (Blueprint $table) {
             $table->id();
             $table->string("nama");
+            $table->string("gambar");
             $table->string("detail");
             $table->timestamps();
         });

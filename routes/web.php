@@ -40,23 +40,23 @@ Route::get('/terms-conditions', function () {
     ]);
 });
 
-Route::get('/entertain', function () {
-    return view('entertain',[
-        "title" => "Entertainment"
-    ]);
-});
-
-Route::get('/food', function () {
-    return view('food',[
-        "title" => "Food"
-    ]);
-});
-
 Route::get('/admin/dashboard', function () {
     return view('admindashboard');
 });
+
+Route::get('/ticket', function () {
+    return view('ticket',[
+        "title" => "Ticket"
+    ]);
+});
+
 Route::get('/admin/users', [Admin::class, 'index']);
+Route::get('/admin/users/tambah', [Admin::class, 'create']);
 Route::get('/admin/ticket', [TicketController::class, 'index']);
 Route::get('/admin/message', [MessageController::class, 'index']);
 Route::get('/admin/food', [FoodController::class, 'index']);
+Route::get('/food', [FoodController::class, 'pageview']);
+Route::get('/admin/food/tambah', [FoodController::class, 'create']);
 Route::get('/admin/entertain', [EntertainmentController::class, 'index']);
+Route::get('/admin/entertain/tambah', [EntertainmentController::class, 'create']);
+Route::get('/entertain', [EntertainmentController::class, 'pageview']);

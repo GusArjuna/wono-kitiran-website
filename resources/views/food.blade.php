@@ -34,7 +34,27 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-container">
-                            
+                            @foreach ($foods as $food)    
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="..." class="img-fluid rounded-start" alt="{{ $food->nama }}">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ $food->nama }}</h5>
+                                                <p class="card-text">{{ $food->detail }}</p>
+                                                <ul class="list-unstyled li-space-lg">
+                                                    <li class="media">
+                                                        <i class="fas fa-square"></i>
+                                                        <div class="media-body">harga {{ $food->harga }}</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div> <!-- end of text-container-->
                     </div> <!-- end of col-->
                 </div> <!-- end of row -->

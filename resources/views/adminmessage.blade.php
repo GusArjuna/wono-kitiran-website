@@ -4,10 +4,6 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="{{ url('') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
-        </div>
         <div class="card shadow mb-4 border-left-success">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary ">Data message</h6>
@@ -43,8 +39,8 @@
                                     <th>{{ $pesan->email }}</th>
                                     <th>{{ $pesan->notelp }}</th>
                                     <th>{{ $pesan->pesan }}</th>
-                                    <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                    <th><a href="{{ url('/admin/message/edit/'.$pesan->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                        <a href="{{ url('/admin/message/delete/'.$pesan->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
                                 </tr>
                             @endforeach
                         </tbody>

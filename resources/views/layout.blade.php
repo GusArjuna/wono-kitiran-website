@@ -77,13 +77,15 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle page-scroll" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ url('terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
+                    <a class="dropdown-item" href="{{ url('/terms-conditions') }}"><span class="item-text">TERMS CONDITIONS</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="{{ url('privacy-policy') }}"><span class="item-text">PRIVACY POLICY</span></a>
+                    <a class="dropdown-item" href="{{ url('/privacy-policy') }}"><span class="item-text">PRIVACY POLICY</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="{{ url('entertain') }}"><span class="item-text">ENTERTAINMENT</span></a>
+                    <a class="dropdown-item" href="{{ url('/entertain') }}"><span class="item-text">ENTERTAINMENT</span></a>
                     <div class="dropdown-items-divide-hr"></div>
-                    <a class="dropdown-item" href="{{ url('food') }}"><span class="item-text">FOOD</span></a>
+                    <a class="dropdown-item" href="{{ url('/food') }}"><span class="item-text">FOOD</span></a>
+                    <div class="dropdown-items-divide-hr"></div>
+                    <a class="dropdown-item" href="{{ url('/ticket') }}"><span class="item-text">TICKET</span></a>
                 </div>
             </li>
             <!-- end of dropdown menu -->

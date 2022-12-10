@@ -127,7 +127,7 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <button type="button" class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#ticketing">DETAILS</button>
+                        <a href="{{ url('/ticket') }}" class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#ticketing">PESAN</a>
                     </div> <!-- end of button-container -->
                 </div>
                 <!-- end of card -->

@@ -20,6 +20,14 @@ class FoodController extends Controller
         ]);
     }
 
+    public function pageview()
+    {
+        return view('food',[
+            "foods" => food::all(),
+            "title" => "Food"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +35,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('admintambahmakan');
     }
 
     /**

@@ -20,6 +20,14 @@ class EntertainmentController extends Controller
         ]);
     }
 
+    public function pageview()
+    {
+        return view('entertain',[
+            "entertains" => entertainment::all(),
+            "title" => "Entertain"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +35,7 @@ class EntertainmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admintambahhiburan');
     }
 
     /**

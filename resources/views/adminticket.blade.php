@@ -6,12 +6,10 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="{{ url('') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a class="btn btn-warning">
                 <i class="fa fa-pencil"></i>
                 Ubah Harga
-                </button>
+            </a>
         </div>
         <div class="card shadow mb-4 border-left-success">
             <div class="card-header py-3">
@@ -45,8 +43,8 @@
                                 <th>{{ $ticket->nama }}</th>
                                 <th>{{ $ticket->dewasa }} Dewasa {{ $ticket->kecil }} Anak</th>
                                 <th>{{ ($ticket->dewasa*$harga->dewasa+$ticket->kecil*$harga->kecil) }}</th>
-                                <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                <th><a href="{{ url('/admin/ticket/edit/'.$ticket->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url('/admin/ticket/delete/'.$ticket->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
                             </tr>
                             @endforeach
                         </tbody>

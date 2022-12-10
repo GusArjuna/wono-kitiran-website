@@ -26,7 +26,7 @@ class Admin extends Controller
      */
     public function create()
     {
-        //
+        return view('admintambahuser');
     }
 
     /**

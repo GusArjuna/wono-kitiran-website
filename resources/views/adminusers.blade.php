@@ -5,7 +5,7 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="{{ url('') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+            <a href="{{ url('/admin/users/tambah') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                 <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
         </div>
         <div class="card shadow mb-4 border-left-success">
@@ -34,8 +34,8 @@
                             <tr>
                                 <th>{{ $user->id }}</th>
                                 <th>{{ $user->name }}</th>
-                                <th><button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></th>
+                                <th><a href="{{ url('/admin/users/edit/'.$user->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ url('/admin/users/delete/'.$user->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
                             </tr>
                             @endforeach
                         </tbody>
