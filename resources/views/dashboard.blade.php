@@ -138,22 +138,11 @@
                         <img class="img-fluid" src="images/services-2.jpg" alt="alternative">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Accelerated Growth</h3>
-                        <p>Use this service pack to give your company the necessary impulse to become an industry leader</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Business strategy planning</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Taking the planned actions</div>
-                            </li>
-                        </ul>
-                        <p class="price">Starting at <span>$299</span></p>
+                        <h3 class="card-title">Makanan</h3>
+                        <p>Disini Tersedia Berbagai Macam Makanan Yang Murah Namun Rasa Tetap Berkualitas</p>
                     </div>
                     <div class="button-container">
-                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                        <a class="btn-solid-reg page-scroll" href="{{ url('/food') }}">DETAILS</a>
                     </div> <!-- end of button-container -->
                 </div>
                 <!-- end of card -->
@@ -164,22 +153,11 @@
                         <img class="img-fluid" src="images/services-3.jpg" alt="alternative">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Market Domination</h3>
-                        <p>You already are a reference point in your industry now you need to learn about acquisitions</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Maintaining the leader status</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-square"></i>
-                                <div class="media-body">Acquisitions the right way</div>
-                            </li>
-                        </ul>
-                        <p class="price">Starting at <span>$299</span></p>
+                        <h3 class="card-title">Hiburan</h3>
+                        <p>Kami Menyediakan Berbagai Macam Hiburan Yang Menghibur Pengunjung</p>
                     </div>
                     <div class="button-container">
-                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                        <a class="btn-solid-reg page-scroll" href="{{ url('/entertain') }}">DETAILS</a>
                     </div> <!-- end of button-container -->
                 </div>
                 <!-- end of card -->
@@ -204,44 +182,6 @@
                         <li><i class="fas fa-phone"></i><a href="tel:003024630820">BASUDEWA +62 851 5686 5853</a></li>
                         <li><i class="fas fa-envelope"></i><a href="mailto:office@aria.com">wisatawalondo@gmail.com</a></li>
                     </ul>
-                    <h3>Follow Wisata Jati Walondo On Social Media</h3>
-
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-twitter fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-pinterest fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-instagram fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="#your-link">
-                            <span class="hexagon"></span>
-                            <i class="fab fa-behance fa-stack-1x"></i>
-                        </a>
-                    </span>
                 </div> <!-- end of text-container -->
             </div> <!-- end of col -->
             <div class="col-lg-6">

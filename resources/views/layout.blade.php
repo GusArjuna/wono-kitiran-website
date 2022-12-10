@@ -92,20 +92,6 @@
                 <a class="nav-link page-scroll" href="{{ url('/admin/login') }}">ADMIN LOGIN</a>
             </li>
         </ul>
-        <span class="nav-item social-icons">
-            <span class="fa-stack">
-                <a href="#your-link">
-                    <span class="hexagon"></span>
-                    <i class="fab fa-facebook-f fa-stack-1x"></i>
-                </a>
-            </span>
-            <span class="fa-stack">
-                <a href="#your-link">
-                    <span class="hexagon"></span>
-                    <i class="fab fa-twitter fa-stack-1x"></i>
-                </a>
-            </span>
-        </span>
     </div>
 </nav> <!-- end of navbar -->
 <!-- end of navbar -->
