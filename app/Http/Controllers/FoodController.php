@@ -46,7 +46,7 @@ class FoodController extends Controller
      */
     public function store(StorefoodRequest $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -68,7 +68,7 @@ class FoodController extends Controller
      */
     public function edit(food $food)
     {
-        //
+        return $food;
     }
 
     /**

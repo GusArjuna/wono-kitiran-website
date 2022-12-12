@@ -118,11 +118,11 @@
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">anak - anak < 3 Tahun : Rp. 5.000</div>
+                                <div class="media-body">anak - anak < 3 Tahun : Rp. {{ $harga->kecil }}</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Dewasa : Rp. 10.000</div>
+                                <div class="media-body">Dewasa : Rp. {{ $harga->dewasa }}</div>
                             </li>
                         </ul>
                     </div>

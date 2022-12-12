@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Wono Kitiran - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ url('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -35,26 +35,23 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Login</h1>
                             </div>
-                            <form class="user"> 
+                            <form class="user" action="/admin/login" method="POST"> 
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
+                                    <input type="text" class="form-control form-control-user @error('username') is-invalid @enderror"
                                         id="username" aria-describedby="username"
-                                        placeholder="Username...">
+                                        placeholder="Username..." name="username" autofocus required value="{{ old('username') }}">
+                                        @error('username')
+                                            {{ $message }}
+                                        @enderror
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user"
-                                        id="exampleInputPassword" placeholder="Password">
+                                        id="exampleInputPassword" placeholder="Password" name="password" required>
                                 </div>
-                                {{-- <div class="form-group">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                                        <label class="custom-control-label" for="customCheck">Remember
-                                            Me</label>
-                                    </div>
-                                </div> --}}
-                                <a href="{{ ('/admin/dashboard') }}" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Login
-                                </a>
+                                </button>
                             </form>
                             <hr>
                                 <div class="text-center">

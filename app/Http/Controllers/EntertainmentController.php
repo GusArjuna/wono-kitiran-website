@@ -68,7 +68,7 @@ class EntertainmentController extends Controller
      */
     public function edit(entertainment $entertainment)
     {
-        //
+        return $entertainment;
     }
 
     /**

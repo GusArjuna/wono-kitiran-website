@@ -3,7 +3,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="/admin/food" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input-group mb-3">
                 <span class="input-group-text" id="namamakan">Nama Makan</span>
