@@ -30,6 +30,7 @@ Route::get('/', function () {
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/register', [LoginController::class, 'store']);
 
 Route::get('/privacy-policy', function () {
     return view('privacy-policy',[
@@ -54,16 +55,23 @@ Route::get('/ticket', function () {
 });
 
 Route::get('/admin/users', [Admin::class, 'index'])->middleware('auth');
+Route::delete('/admin/users', [Admin::class, 'destroy'])->middleware('auth');
 Route::get('/admin/users/tambah', [Admin::class, 'create'])->middleware('auth');
 Route::get('/admin/ticket', [TicketController::class, 'index'])->middleware('auth');
+Route::delete('/admin/ticket', [TicketController::class, 'destroy'])->middleware('auth');
 Route::get('/admin/message', [MessageController::class, 'index'])->middleware('auth');
+Route::delete('/admin/message/{message}', [MessageController::class, 'destroy'])->middleware('auth');
+Route::get('/admin/view/message/{message}', [MessageController::class, 'show'])->middleware('auth');
 Route::get('/admin/food', [FoodController::class, 'index'])->middleware('auth');
 Route::post('/admin/food', [FoodController::class, 'store'])->middleware('auth');
+Route::delete('/admin/food', [FoodController::class, 'destroy'])->middleware('auth');
 Route::get('/food', [FoodController::class, 'pageview']);
 Route::get('/admin/food/tambah', [FoodController::class, 'create'])->middleware('auth');
 Route::get('/admin/food/edit/{food}', [FoodController::class, 'edit'])->middleware('auth');
 Route::get('/admin/food/delete/{food}', [FoodController::class, 'destroy'])->middleware('auth');
 Route::get('/admin/entertain', [EntertainmentController::class, 'index'])->middleware('auth');
+Route::delete('/admin/entertain', [EntertainmentController::class, 'destroy'])->middleware('auth');
+Route::post('/admin/entertain', [EntertainmentController::class, 'store'])->middleware('auth');
 Route::get('/admin/entertain/tambah', [EntertainmentController::class, 'create'])->middleware('auth');
 Route::get('/admin/entertain/edit/{entertainment}', [EntertainmentController::class, 'edit'])->middleware('auth');
 Route::get('/admin/entertain/delete/{entertainment}', [EntertainmentController::class, 'destroy'])->middleware('auth');

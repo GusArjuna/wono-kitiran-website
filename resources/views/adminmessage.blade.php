@@ -2,7 +2,11 @@
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
         <div class="card shadow mb-4 border-left-success">
             <div class="card-header py-3">
@@ -39,8 +43,13 @@
                                     <th>{{ $pesan->email }}</th>
                                     <th>{{ $pesan->notelp }}</th>
                                     <th>{{ $pesan->pesan }}</th>
-                                    <th><a href="{{ url('/admin/message/edit/'.$pesan->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                        <a href="{{ url('/admin/message/delete/'.$pesan->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
+                                    <th><a href="{{ url('/admin/view/message/'.$pesan->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                        <form action="/admin/message/{{ $pesan->id }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button  class="btn btn-danger border-0" onclick="return confirm('Hapus?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </form>
+                                    </th>
                                 </tr>
                             @endforeach
                         </tbody>

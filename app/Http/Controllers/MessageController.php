@@ -49,7 +49,9 @@ class MessageController extends Controller
      */
     public function show(message $message)
     {
-        //
+        return view('adminlihatpesan',[
+            "pesan" => $message
+        ]);
     }
 
     /**
@@ -83,6 +85,8 @@ class MessageController extends Controller
      */
     public function destroy(message $message)
     {
-        //
+        message::destroy($message->id);
+
+        return redirect('/admin/message')->with('success','Sudah Dihapus');
     }
 }

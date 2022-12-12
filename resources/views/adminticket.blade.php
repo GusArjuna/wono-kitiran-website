@@ -44,7 +44,11 @@
                                 <th>{{ $ticket->dewasa }} Dewasa {{ $ticket->kecil }} Anak</th>
                                 <th>{{ ($ticket->dewasa*$harga->dewasa+$ticket->kecil*$harga->kecil) }}</th>
                                 <th><a href="{{ url('/admin/ticket/edit/'.$ticket->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ url('/admin/ticket/delete/'.$ticket->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
+                                    <form action="/admin/ticket/{{ $ticket->id }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button  class="btn btn-danger border-0" onclick="return confirm('Hapus?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </form></th>
                             </tr>
                             @endforeach
                         </tbody>

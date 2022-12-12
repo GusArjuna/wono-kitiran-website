@@ -6,20 +6,20 @@
         <form action="/admin/food" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input-group mb-3">
-                <span class="input-group-text" id="namamakan">Nama Makan</span>
-                <input type="text" class="form-control" placeholder="Jungkat - Jungkit" aria-label="namamakan" name="namamakan" aria-describedby="namamakan">
+                <span class="input-group-text" id="nama">Nama Makan</span>
+                <input type="text" class="form-control" placeholder="Jungkat - Jungkit" aria-label="nama" name="nama" aria-describedby="nama">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="detailmakan">Detail Makan</span>
-                <input type="text" class="form-control" placeholder="Terbuat Dari" aria-label="detailmakan" name="detailmakan" aria-describedby="detailmakan">
+                <span class="input-group-text" id="detail">Detail Makan</span>
+                <input type="text" class="form-control" placeholder="Terbuat Dari" aria-label="detail" name="detail" aria-describedby="detail">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="hargamakan">Harga Makan</span>
-                <input type="number" class="form-control" placeholder="12000" aria-label="hargamakan" name="hargamakan" aria-describedby="hargamakan">
+                <span class="input-group-text" id="harga">Harga Makan</span>
+                <input type="number" class="form-control" placeholder="12000" aria-label="harga" name="harga" aria-describedby="harga">
             </div>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="gambarmakan" name="gambarmakan">
-                <label class="input-group-text" for="gambarmakan">Upload Gambar</label>
+                <input type="file" class="form-control" id="gambar" name="gambar">
+                <label class="input-group-text" for="gambar">Upload Gambar</label>
             </div>
             <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
                 <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</button>

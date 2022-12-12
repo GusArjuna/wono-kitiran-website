@@ -46,7 +46,14 @@ class EntertainmentController extends Controller
      */
     public function store(StoreentertainmentRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'detail' => ['required'],
+        ]);
+        
+        entertainment::create($validatedData);
+
+        return redirect('/admin/entertain')->with('success','Sudah Ditambahkan');
     }
 
     /**

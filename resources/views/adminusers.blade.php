@@ -33,9 +33,13 @@
                             @foreach ($users as $user) 
                             <tr>
                                 <th>{{ $user->id }}</th>
-                                <th>{{ $user->name }}</th>
+                                <th>{{ $user->username }}</th>
                                 <th><a href="{{ url('/admin/users/edit/'.$user->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ url('/admin/users/delete/'.$user->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
+                                    <form action="/admin/users/{{ $user->id }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button  class="btn btn-danger border-0" onclick="return confirm('Hapus?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                    </form></th>
                             </tr>
                             @endforeach
                         </tbody>

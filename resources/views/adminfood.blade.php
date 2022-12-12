@@ -2,7 +2,11 @@
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <a href="{{ url('/admin/food/tambah') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
@@ -41,7 +45,12 @@
                                     <th>{{ $food->detail }}</th>
                                     <th>{{ $food->harga }}</th>
                                     <th><a href="{{ url('/admin/food/edit/'.$food->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
-                                    <a href="{{ url('/admin/food/delete/'.$food->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
+                                        <form action="/admin/food/{{ $food->id }}" method="post" class="d-inline">
+                                            @method('delete')
+                                            @csrf
+                                            <button  class="btn btn-danger border-0" onclick="return confirm('Hapus?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </form>
+                                    </th>
                                 </tr>
                             @endforeach
                         </tbody>

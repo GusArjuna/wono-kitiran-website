@@ -46,7 +46,15 @@ class FoodController extends Controller
      */
     public function store(StorefoodRequest $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'detail' => ['required'],
+            'harga' => ['required'],
+        ]);
+        
+        food::create($validatedData);
+
+        return redirect('/admin/food')->with('success','Sudah Ditambahkan');
     }
 
     /**

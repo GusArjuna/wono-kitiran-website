@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,6 +11,20 @@ class LoginController extends Controller
     public function index()
     {
         return view('adminlogin');
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'username' => 'required|unique:users',
+            'password' => 'required',
+        ]);
+        
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        User::create($validatedData);
+
+        return redirect('/admin/users');
     }
 
     public function logout(Request $request)
