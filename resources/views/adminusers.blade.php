@@ -2,7 +2,11 @@
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <a href="{{ url('/admin/users/tambah') }}" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
@@ -32,9 +36,9 @@
                         <tbody>
                             @foreach ($users as $user) 
                             <tr>
-                                <th>{{ $user->id }}</th>
+                                <th>{{ $loop->iteration }}</th>
                                 <th>{{ $user->username }}</th>
-                                <th><a href="{{ url('/admin/users/edit/'.$user->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <th><a href="{{ url('/admin/users/'.$user->id.'/edit') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                     <form action="/admin/users/{{ $user->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf

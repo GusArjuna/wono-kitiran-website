@@ -59,7 +59,9 @@ class Admin extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('adminedituser',[
+            "user" => $user
+        ]);
     }
 
     /**
@@ -71,7 +73,23 @@ class Admin extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+
+        $rules = [
+            'password' => 'required',
+        ];
+        
+        if ($request->username != $user->username) {
+            $rules['username'] = 'required|unique:users';
+        } 
+        $validatedData = $request->validate($rules);
+        
+        $validatedData['passwordnormal'] = $validatedData['password'];
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        User::where('id',$user->id)
+                ->update($validatedData);
+
+        return redirect('/admin/users')->with('success','Sudah diubah');
     }
 
     /**
@@ -82,6 +100,8 @@ class Admin extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+
+        return redirect('/admin/users')->with('success','Sudah Dihapus');
     }
 }

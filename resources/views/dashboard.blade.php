@@ -171,6 +171,11 @@
 <div id="contact" class="form-2">
     <div class="container">
         <div class="row">
+            @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
             <div class="col-lg-6">
                 <div class="text-container">
                     <div class="section-title">CONTACT</div>
@@ -187,36 +192,34 @@
             <div class="col-lg-6">
                 
                 <!-- Contact Form -->
-                <form id="contactForm" data-toggle="validator" data-focus="false">
+                <form action="/admin/message/tambah" method="POST">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="cname" required>
-                        <label class="label-control" for="cname">Name</label>
+                        <input type="text" class="form-control-input" id="nama" required name="nama" >
+                        <label class="label-control" for="nama">Name</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control-input" id="cemail" required>
-                        <label class="label-control" for="cemail">Email</label>
+                        <input type="email" class="form-control-input" id="email" required name="email" >
+                        <label class="label-control" for="email">Email</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control-input" id="cphone" name="cphone" required>
-                        <label class="label-control" for="cphone">Phone</label>
+                        <input type="text" class="form-control-input" id="notelp" required name="notelp" >
+                        <label class="label-control" for="notelp">Phone</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                        <label class="label-control" for="cmessage">Your message</label>
+                        <textarea class="form-control-textarea" id="pesan" required name="pesan" ></textarea>
+                        <label class="label-control" for="pesan">Your message</label>
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group checkbox">
-                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>Saya Setuju dengan <a href="{{ url('privacy-policy') }}">Kebijakan</a> dan <a href="{{ url('terms-conditions') }}">Syarat Ketentuan</a>  Wisata Jati Walondo
+                        <input type="checkbox" id="cterms" required>Saya Setuju dengan <a href="{{ url('privacy-policy') }}">Kebijakan</a> dan <a href="{{ url('terms-conditions') }}">Syarat Ketentuan</a>  Wisata Jati Walondo
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
-                    </div>
-                    <div class="form-message">
-                        <div id="cmsgSubmit" class="h3 text-center hidden"></div>
                     </div>
                 </form>
                 <!-- end of contact form -->

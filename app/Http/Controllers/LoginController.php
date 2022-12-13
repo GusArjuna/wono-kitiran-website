@@ -20,11 +20,13 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
         
+        $validatedData['passwordnormal'] = $validatedData['password'];
         $validatedData['password'] = bcrypt($validatedData['password']);
+
 
         User::create($validatedData);
 
-        return redirect('/admin/users');
+        return redirect('/admin/users')->with('success','Sudah diubah');
     }
 
     public function logout(Request $request)

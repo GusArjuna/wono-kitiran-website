@@ -76,7 +76,9 @@ class FoodController extends Controller
      */
     public function edit(food $food)
     {
-        return $food;
+        return view('admineditmakan',[
+            "food" => $food
+        ]);
     }
 
     /**
@@ -88,7 +90,16 @@ class FoodController extends Controller
      */
     public function update(UpdatefoodRequest $request, food $food)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'detail' => ['required'],
+            'harga' => ['required'],
+        ]);
+        
+        food::where('id',$food->id)
+                ->update($validatedData);
+
+        return redirect('/admin/food')->with('success','Sudah diubah');
     }
 
     /**
@@ -99,6 +110,8 @@ class FoodController extends Controller
      */
     public function destroy(food $food)
     {
-        //
+        food::destroy($food->id);
+
+        return redirect('/admin/food')->with('success','Sudah Dihapus');
     }
 }

@@ -19,10 +19,10 @@
             </div>
             <div class="input-group">
                 <span class="input-group-text">Pesan</span>
-                <textarea class="form-control" aria-label="Pesan" name="pesan" value="{{ $pesan->pesan }}" ></textarea>
+                <textarea class="form-control" aria-label="Pesan" name="pesan" >{{ $pesan->pesan }}</textarea>
               </div>
-            <a href="/admin/message" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
-                <i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
+            <a href="/admin/message" class="d-none d-sm-inline-block btn btn-sm btn-primary mt-4 shadow-sm">
+                <i class="fa fa-chevron-circle-left" aria-hidden="true"></i> kembali</a>
         </form>
     </div>
     <!-- /.container-fluid -->

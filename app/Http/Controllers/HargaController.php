@@ -57,7 +57,9 @@ class HargaController extends Controller
      */
     public function edit(Harga $harga)
     {
-        //
+        return view('adminharga',[
+            "harga" => $harga
+        ]);
     }
 
     /**
@@ -69,7 +71,15 @@ class HargaController extends Controller
      */
     public function update(Request $request, Harga $harga)
     {
-        //
+        $validatedData = $request->validate([
+            'dewasa' => ['required'],
+            'kecil' => ['required'],
+        ]);
+        
+        Harga::where('id',$harga->id)
+                ->update($validatedData);
+
+        return redirect('/admin/ticket')->with('success','Sudah diubah');
     }
 
     /**

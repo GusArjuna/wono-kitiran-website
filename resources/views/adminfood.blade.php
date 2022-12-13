@@ -40,11 +40,11 @@
                         <tbody>
                             @foreach ($foods as $food)
                                 <tr>
-                                    <th>{{ $food->id }}</th>
+                                    <th>{{ $loop->iteration }}</th>
                                     <th>{{ $food->nama }}</th>
                                     <th>{{ $food->detail }}</th>
                                     <th>{{ $food->harga }}</th>
-                                    <th><a href="{{ url('/admin/food/edit/'.$food->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                    <th><a href="{{ url('/admin/food/'.$food->id.'/edit') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <form action="/admin/food/{{ $food->id }}" method="post" class="d-inline">
                                             @method('delete')
                                             @csrf

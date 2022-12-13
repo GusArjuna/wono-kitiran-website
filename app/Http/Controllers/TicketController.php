@@ -40,7 +40,15 @@ class TicketController extends Controller
      */
     public function store(StoreticketRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'dewasa' => ['required'],
+            'kecil' => ['required'],
+        ]);
+        
+        ticket::create($validatedData);
+
+        return redirect('/ticket')->with('success','Data Sudah Tercatat Silahkan Melakukan Pembayaran Di Loket');
     }
 
     /**
@@ -62,7 +70,9 @@ class TicketController extends Controller
      */
     public function edit(ticket $ticket)
     {
-        //
+        return view('admineditticket',[
+            "ticket" => $ticket
+        ]);
     }
 
     /**
@@ -74,7 +84,16 @@ class TicketController extends Controller
      */
     public function update(UpdateticketRequest $request, ticket $ticket)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'dewasa' => ['required'],
+            'kecil' => ['required'],
+        ]);
+        
+        ticket::where('id',$ticket->id)
+                ->update($validatedData);
+
+        return redirect('/admin/ticket')->with('success','Sudah diubah');
     }
 
     /**
@@ -85,6 +104,8 @@ class TicketController extends Controller
      */
     public function destroy(ticket $ticket)
     {
-        //
+        ticket::destroy($ticket->id);
+
+        return redirect('/admin/ticket')->with('success','Sudah Dihapus');
     }
 }

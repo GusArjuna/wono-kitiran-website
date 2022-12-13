@@ -38,12 +38,12 @@
                         <tbody>
                             @foreach ($pesans as $pesan)
                                 <tr>
-                                    <th>{{ $pesan->id }}</th>
+                                    <th>{{ $loop->iteration }}</th>
                                     <th>{{ $pesan->nama }}</th>
                                     <th>{{ $pesan->email }}</th>
                                     <th>{{ $pesan->notelp }}</th>
                                     <th>{{ $pesan->pesan }}</th>
-                                    <th><a href="{{ url('/admin/view/message/'.$pesan->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                    <th><a href="{{ url('/admin/view/message/'.$pesan->id) }}" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                         <form action="/admin/message/{{ $pesan->id }}" method="post" class="d-inline">
                                             @method('delete')
                                             @csrf

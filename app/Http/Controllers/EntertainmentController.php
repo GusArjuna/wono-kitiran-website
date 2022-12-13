@@ -75,7 +75,9 @@ class EntertainmentController extends Controller
      */
     public function edit(entertainment $entertainment)
     {
-        return $entertainment;
+        return view('adminedithiburan',[
+            "entertain" => $entertainment
+        ]);
     }
 
     /**
@@ -87,7 +89,15 @@ class EntertainmentController extends Controller
      */
     public function update(UpdateentertainmentRequest $request, entertainment $entertainment)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'detail' => ['required'],
+        ]);
+        
+        entertainment::where('id',$entertainment->id)
+                ->update($validatedData);
+
+        return redirect('/admin/entertain')->with('success','Sudah diubah');
     }
 
     /**
@@ -98,6 +108,8 @@ class EntertainmentController extends Controller
      */
     public function destroy(entertainment $entertainment)
     {
-        //
+        entertainment::destroy($entertainment->id);
+
+        return redirect('/admin/entertain')->with('success','Sudah Dihapus');
     }
 }

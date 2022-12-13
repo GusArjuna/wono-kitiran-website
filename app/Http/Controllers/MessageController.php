@@ -38,7 +38,16 @@ class MessageController extends Controller
      */
     public function store(StoremessageRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'email' => ['required'],
+            'notelp' => ['required'],
+            'pesan' => ['required'],
+        ]);
+        
+        message::create($validatedData);
+
+        return redirect('/#contact')->with('success','Pesan sudah diterima silahkan menunggu untuk dihubungi oleh kami terima kasih');
     }
 
     /**

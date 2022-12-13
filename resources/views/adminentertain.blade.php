@@ -38,10 +38,10 @@
                         <tbody>
                             @foreach ($entertains as $entertain)
                                 <tr>
-                                    <th>{{ $entertain->id }}</th>
+                                    <th>{{ $loop->iteration }}</th>
                                     <th>{{ $entertain->nama }}</th>
                                     <th>{{ $entertain->detail }}</th>
-                                    <th><a href="{{ url('/admin/entertain/edit/'.$entertain->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                    <th><a href="{{ url('/admin/entertain/'.$entertain->id.'/edit') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                         <form action="/admin/entertain/{{ $entertain->id }}" method="post" class="d-inline">
                                             @method('delete')
                                             @csrf

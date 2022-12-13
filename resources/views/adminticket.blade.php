@@ -3,10 +3,14 @@
 <!-- Button trigger modal -->
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a class="btn btn-warning">
+            <a href="/admin/harga/{{ $harga->id }}" class="btn btn-warning">
                 <i class="fa fa-pencil"></i>
                 Ubah Harga
             </a>
@@ -39,11 +43,11 @@
                         <tbody>
                             @foreach ($tickets as $ticket)
                             <tr>
-                                <th>{{ $ticket->id }}</th>
+                                <th>{{ $loop->iteration }}</th>
                                 <th>{{ $ticket->nama }}</th>
                                 <th>{{ $ticket->dewasa }} Dewasa {{ $ticket->kecil }} Anak</th>
                                 <th>{{ ($ticket->dewasa*$harga->dewasa+$ticket->kecil*$harga->kecil) }}</th>
-                                <th><a href="{{ url('/admin/ticket/edit/'.$ticket->id) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                                <th><a href="{{ url('/admin/ticket/'.$ticket->id.'/edit') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
                                     <form action="/admin/ticket/{{ $ticket->id }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf

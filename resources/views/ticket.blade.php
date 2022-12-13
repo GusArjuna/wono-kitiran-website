@@ -11,7 +11,7 @@
             </div> <!-- end of container -->
         </header> <!-- end of ex-header -->
         <!-- end of header -->
-    
+
     
         <!-- Breadcrumbs -->
         <div class="ex-basic-1">
@@ -27,6 +27,11 @@
         </div> <!-- end of ex-basic-1 -->
         <!-- end of breadcrumbs -->
     
+        @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
     
         <!-- Privacy Content -->
         <div class="ex-basic-2">
@@ -34,11 +39,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-container">
-                            <form action="" method="post">
+                            <form action="/admin/ticket/tambah" method="post">
                                 @csrf
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="namapemesan">Nama Pemesan</span>
-                                    <input type="text" class="form-control" placeholder="Agus" aria-label="namapemesan" name="namapemesan" aria-describedby="namapemesan">
+                                    <span class="input-group-text" id="nama">Nama Pemesan</span>
+                                    <input type="text" class="form-control" placeholder="Agus" aria-label="nama" name="nama" aria-describedby="nama">
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="dewasa">Dewasa</span>

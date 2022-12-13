@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin;
 use App\Http\Controllers\EntertainmentController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\HargaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TicketController;
@@ -54,25 +55,40 @@ Route::get('/ticket', function () {
     ]);
 });
 
+Route::get('/admin/harga/{harga}', [HargaController::class, 'edit'])->middleware('auth');
+Route::patch('/admin/harga/{harga}', [HargaController::class, 'update'])->middleware('auth');
+
 Route::get('/admin/users', [Admin::class, 'index'])->middleware('auth');
-Route::delete('/admin/users', [Admin::class, 'destroy'])->middleware('auth');
+Route::get('/admin/users/{user}/edit', [Admin::class, 'edit'])->middleware('auth');
+Route::patch('/admin/users/{user}', [Admin::class, 'update'])->middleware('auth');
+Route::delete('/admin/users/{user}', [Admin::class, 'destroy'])->middleware('auth');
 Route::get('/admin/users/tambah', [Admin::class, 'create'])->middleware('auth');
+
 Route::get('/admin/ticket', [TicketController::class, 'index'])->middleware('auth');
-Route::delete('/admin/ticket', [TicketController::class, 'destroy'])->middleware('auth');
+Route::post('/admin/ticket/tambah', [TicketController::class, 'store']);
+Route::patch('/admin/ticket/{ticket}', [TicketController::class, 'update'])->middleware('auth');
+Route::get('/admin/ticket/{ticket}/edit', [TicketController::class, 'edit'])->middleware('auth');
+Route::delete('/admin/ticket/{ticket}', [TicketController::class, 'destroy'])->middleware('auth');
+
 Route::get('/admin/message', [MessageController::class, 'index'])->middleware('auth');
+Route::post('/admin/message/tambah', [MessageController::class, 'store']);
 Route::delete('/admin/message/{message}', [MessageController::class, 'destroy'])->middleware('auth');
 Route::get('/admin/view/message/{message}', [MessageController::class, 'show'])->middleware('auth');
+
 Route::get('/admin/food', [FoodController::class, 'index'])->middleware('auth');
 Route::post('/admin/food', [FoodController::class, 'store'])->middleware('auth');
-Route::delete('/admin/food', [FoodController::class, 'destroy'])->middleware('auth');
+Route::patch('/admin/food/{food}', [FoodController::class, 'update'])->middleware('auth');
+Route::delete('/admin/food/{food}', [FoodController::class, 'destroy'])->middleware('auth');
 Route::get('/food', [FoodController::class, 'pageview']);
 Route::get('/admin/food/tambah', [FoodController::class, 'create'])->middleware('auth');
-Route::get('/admin/food/edit/{food}', [FoodController::class, 'edit'])->middleware('auth');
+Route::get('/admin/food/{food}/edit', [FoodController::class, 'edit'])->middleware('auth');
 Route::get('/admin/food/delete/{food}', [FoodController::class, 'destroy'])->middleware('auth');
+
 Route::get('/admin/entertain', [EntertainmentController::class, 'index'])->middleware('auth');
-Route::delete('/admin/entertain', [EntertainmentController::class, 'destroy'])->middleware('auth');
 Route::post('/admin/entertain', [EntertainmentController::class, 'store'])->middleware('auth');
+Route::get('/admin/entertain/{entertainment}/edit', [EntertainmentController::class, 'edit'])->middleware('auth');
+Route::patch('/admin/entertain/{entertainment}', [EntertainmentController::class, 'update'])->middleware('auth');
+Route::delete('/admin/entertain/{entertainment}', [EntertainmentController::class, 'destroy'])->middleware('auth');
 Route::get('/admin/entertain/tambah', [EntertainmentController::class, 'create'])->middleware('auth');
-Route::get('/admin/entertain/edit/{entertainment}', [EntertainmentController::class, 'edit'])->middleware('auth');
 Route::get('/admin/entertain/delete/{entertainment}', [EntertainmentController::class, 'destroy'])->middleware('auth');
 Route::get('/entertain', [EntertainmentController::class, 'pageview']);
