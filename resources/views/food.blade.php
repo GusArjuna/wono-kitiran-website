@@ -38,7 +38,7 @@
                                 <div class="card mb-3" style="max-width: 540px;">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <img src="..." class="img-fluid rounded-start" alt="{{ $food->nama }}">
+                                            <img src="{{ asset('storage/'.$food->gambar) }}" class="img-fluid rounded-start" alt="{{ $food->nama }}">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">

@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>gambar</th>
                                 <th>Nama Makanan</th>
                                 <th>Detail makanan</th>
                                 <th>harga</th>
@@ -31,6 +32,7 @@
                         <tfoot>
                             <tr>
                                 <th>No.</th>
+                                <th>gambar</th>
                                 <th>Nama Makanan</th>
                                 <th>Detail makanan</th>
                                 <th>harga</th>
@@ -41,6 +43,11 @@
                             @foreach ($foods as $food)
                                 <tr>
                                     <th>{{ $loop->iteration }}</th>
+                                    <th>
+                                        <div style="height: 200px; width: 200px">
+                                            <img src="{{ asset('storage/'.$food->gambar) }}" class="img-fluid rounded-start" alt="{{ $food->nama }}">
+                                        </div>
+                                    </th>
                                     <th>{{ $food->nama }}</th>
                                     <th>{{ $food->detail }}</th>
                                     <th>{{ $food->harga }}</th>

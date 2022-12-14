@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <th>No.</th>
+                                <th>Gambar</th>
                                 <th>Nama hiburan</th>
                                 <th>Detail hiburan</th>
                                 <th>Aksi</th>
@@ -30,6 +31,7 @@
                         <tfoot>
                             <tr>
                                 <th>No.</th>
+                                <th>Gambar</th>
                                 <th>Nama hiburan</th>
                                 <th>Detail hiburan</th>
                                 <th>Aksi</th>
@@ -39,6 +41,9 @@
                             @foreach ($entertains as $entertain)
                                 <tr>
                                     <th>{{ $loop->iteration }}</th>
+                                    <th><div style="height: 200px; width: 200px">
+                                        <img src="{{ asset('storage/'.$entertain->gambar) }}" class="img-fluid rounded-start" alt="{{ $entertain->nama }}">
+                                    </div></th>
                                     <th>{{ $entertain->nama }}</th>
                                     <th>{{ $entertain->detail }}</th>
                                     <th><a href="{{ url('/admin/entertain/'.$entertain->id.'/edit') }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>

@@ -18,7 +18,7 @@
                 <input type="number" class="form-control" placeholder="12000" aria-label="harga" name="harga" aria-describedby="harga">
             </div>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" id="gambar" name="gambar">
+                <input type="file" class="form-control" id="gambar" name="gambar" required>
                 <label class="input-group-text" for="gambar">Upload Gambar</label>
             </div>
             <button type="submit" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">

@@ -11,7 +11,7 @@
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="detail">Detail Hiburan</span>
-                <input type="text" class="form-control" placeholder="Untuk Dewasa" aria-label="detail" name="detail" aria-describedby="detail" value="{{ $entertain->detail }}" >
+                <input type="text" class="form-control" placeholder="Untuk umum / Untuk Anak - Anak" aria-label="detail" name="detail" aria-describedby="detail" value="{{ $entertain->detail }}" >
             </div>
             <div class="input-group mb-3">
                 <input type="file" class="form-control" id="gambar" name="gambar">

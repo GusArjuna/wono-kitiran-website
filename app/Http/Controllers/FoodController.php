@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\food;
 use App\Http\Requests\StorefoodRequest;
 use App\Http\Requests\UpdatefoodRequest;
+use Illuminate\Support\Facades\Storage;
 
 class FoodController extends Controller
 {
@@ -50,8 +51,11 @@ class FoodController extends Controller
             'nama' => ['required'],
             'detail' => ['required'],
             'harga' => ['required'],
+            'gambar' => ['image','required'],
         ]);
         
+        $validatedData['gambar'] = $request->file('gambar')->store('imagesContent');
+
         food::create($validatedData);
 
         return redirect('/admin/food')->with('success','Sudah Ditambahkan');
@@ -94,8 +98,16 @@ class FoodController extends Controller
             'nama' => ['required'],
             'detail' => ['required'],
             'harga' => ['required'],
+            'gambar' => ['image','required'],
         ]);
         
+        if($request->file('gambar')){
+            Storage::delete($food->gambar);
+            $validatedData['gambar'] = $request->file('gambar')->store('imagesContent');
+        }else{
+            $validatedData['gambar'] = $food->gambar;
+        }
+
         food::where('id',$food->id)
                 ->update($validatedData);
 
@@ -110,6 +122,7 @@ class FoodController extends Controller
      */
     public function destroy(food $food)
     {
+        Storage::delete($food->gambar);
         food::destroy($food->id);
 
         return redirect('/admin/food')->with('success','Sudah Dihapus');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\entertainment;
 use App\Http\Requests\StoreentertainmentRequest;
 use App\Http\Requests\UpdateentertainmentRequest;
+use Illuminate\Support\Facades\Storage;
 
 class EntertainmentController extends Controller
 {
@@ -49,8 +50,11 @@ class EntertainmentController extends Controller
         $validatedData = $request->validate([
             'nama' => ['required'],
             'detail' => ['required'],
+            'gambar' => ['image','required'],
         ]);
         
+        $validatedData['gambar'] = $request->file('gambar')->store('imagesContent');
+
         entertainment::create($validatedData);
 
         return redirect('/admin/entertain')->with('success','Sudah Ditambahkan');
@@ -92,8 +96,16 @@ class EntertainmentController extends Controller
         $validatedData = $request->validate([
             'nama' => ['required'],
             'detail' => ['required'],
+            'gambar' => ['image','required'],
         ]);
         
+        if($request->file('gambar')){
+            Storage::delete($entertainment->gambar);
+            $validatedData['gambar'] = $request->file('gambar')->store('imagesContent');
+        }else{
+            $validatedData['gambar'] = $entertainment->gambar;
+        }
+
         entertainment::where('id',$entertainment->id)
                 ->update($validatedData);
 
@@ -108,6 +120,7 @@ class EntertainmentController extends Controller
      */
     public function destroy(entertainment $entertainment)
     {
+        Storage::delete($entertainment->gambar);
         entertainment::destroy($entertainment->id);
 
         return redirect('/admin/entertain')->with('success','Sudah Dihapus');
